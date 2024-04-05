@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to AWS...
+  build:
+    commands:
+      - echo Deploying to Kubernetes...
+  post_build:
+    commands:
+      - kubectl apply -f deployment.yaml
+      - kubectl apply -f service.yaml
