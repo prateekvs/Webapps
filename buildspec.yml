@@ -12,8 +12,8 @@ phases:
   post_build:
     commands:
       - echo "Applying updated Kubernetes deployment"
-      - kubectl apply -f kubernetes/deployment.yaml
-      - kubectl apply -f kubernetes/service.yaml
+      - kubectl apply -f deployment.yaml
+      - kubectl apply -f service.yaml
 
 # Optional: Define output artifacts
 artifacts:
