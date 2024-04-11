@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - echo "Updating Kubernetes deployment with the latest image from ECR"
-      - sed -i 's|CONTAINER_IMAGE_PLACEHOLDER|026894909295.dkr.ecr.ap-south-1.amazonaws.com/webapp-page:latest|' kubernetes/deployment.yaml
+      - sed -i 's|CONTAINER_IMAGE_PLACEHOLDER|026894909295.dkr.ecr.ap-south-1.amazonaws.com/webapp-page:latest|' deployment.yaml
   post_build:
     commands:
       - echo "Applying updated Kubernetes deployment"
