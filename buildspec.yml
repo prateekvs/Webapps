@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo "Downloading kubectl and configuring cluster access"
-      - aws eks --region ap-south-1 update-kubeconfig --name kube32neweks
+      - aws eks update-kubeconfig --name kube32newek --region ap-south-1 --role-arn arn:aws:iam::026894909295:role/CodeBuildServiceRole
   build:
     commands:
       - echo "Updating Kubernetes deployment with the latest image from ECR"
