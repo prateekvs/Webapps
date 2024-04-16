@@ -8,16 +8,16 @@ phases:
   build:
     commands:
       - echo "Updating Kubernetes deployment with the latest image from ECR"
-      - sed -i 's|CONTAINER_IMAGE_PLACEHOLDER|026894909295.dkr.ecr.ap-south-1.amazonaws.com/webapp-page:latest|' deployment.yaml
+      - sed -i 's|CONTAINER_IMAGE_PLACEHOLDER|026894909295.dkr.ecr.ap-south-1.amazonaws.com/webapp-page:latest|' deploymentnew.yaml
   post_build:
     commands:
       - echo "Applying updated Kubernetes deployment"
-      - kubectl apply -f deployment.yaml
-      - kubectl apply -f service.yaml
+      - kubectl apply -f deploymentnew.yaml
+      - kubectl apply -f servicenew.yaml
 
 # Optional: Define output artifacts
 artifacts:
   files:
-    - kubernetes/deployment.yaml
-    - kubernetes/service.yaml
+    - kubernetes/deploymentnew.yaml
+    - kubernetes/servicenew.yaml
 
