@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    user_agent = request.headers.get('User-Agent')
     return f"""
     <html>
     <head>
@@ -35,7 +34,6 @@ def welcome():
     <body>
         <div class="container">
             <h1>Welcome to 2022!</h1>
-            <p>Your user agent: {user_agent}</p>
         </div>
     </body>
     </html>
