@@ -1,4 +1,5 @@
 version: 0.2
+
 phases:
   pre_build:
     commands:
@@ -19,4 +20,3 @@ artifacts:
   files:
     - kubernetes/deploymentnew.yaml
     - kubernetes/servicenew.yaml
-
