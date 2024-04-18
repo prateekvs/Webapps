@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-web-app-test
+  name: my-web-app-latest
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-web-app-test
+      app: my-web-app-latest
   template:
     metadata:
       labels:
-        app: my-web-app-test
+        app: my-web-app-latest
     spec:
       containers:
-      - name: my-web-app-test
-        image: 026894909295.dkr.ecr.ap-south-1.amazonaws.com/webapp-page:latest
+      - name: my-web-app-latest
+        image: 026894909295.dkr.ecr.ap-south-1.amazonaws.com/webapp-page-new:latest
         ports:
         - containerPort: 80
