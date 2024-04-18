@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-web-app-service-test
+  name: my-web-app-service-latest
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
   selector:
-    app: my-web-app-test
+    app: my-web-app-latest
