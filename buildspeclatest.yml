@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Downloading kubectl and configuring cluster access"
+      - aws eks --region ap-south-1 update-kubeconfig --name kube32neweks
+  build:
+    commands:
+      - echo "Updating Kubernetes deployment with the latest image from ECR"
+      - sed -i 's|CONTAINER_IMAGE_PLACEHOLDER|026894909295.dkr.ecr.ap-south-1.amazonaws.com/webapp-page-new:latest|' deploymentlatest.yaml
+  post_build:
+    commands:
+      - echo "Applying updated Kubernetes deployment"
+      - kubectl apply -f deploymentlatest.yaml
+      - kubectl apply -f servicelatest.yaml
+
+# Optional: Define output artifacts
+artifacts:
+  files:
+    - kubernetes/deploymentlatest.yaml
+    - kubernetes/servicelatest.yaml
